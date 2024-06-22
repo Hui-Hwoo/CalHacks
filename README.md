@@ -22,6 +22,7 @@
      - [ ] Optional flow to demo: User can ask clarifying questions around flashcards
      - [ ] Question: Is Hume's LLM a good enough general LLM, or do we need to use ChatGPT?
  - [ ] Make prompt for LLM to read the format properly/generate data to send back to Anki
+    - [ ] Test first using a text file that roughly corresponds to Anki's deck/card data structure
  - [ ] Add Text to Speech either via Hume or LMNT - so that we're conversing instead of typing
  - [ ] Prototype auto-generating flashcards via AI
     - [ ] OCR using Intel's platform? Or maybe just GPT-4o...
