@@ -1,10 +1,15 @@
 # Fetch and Update Cards Information
-from utils import invoke
+from .utils import invoke
 
 
 class AnkiCards:
-    def __init__(self, deckId: str) -> None:
-        self.deckId = deckId
+    def __init__(self, deckInfo: dict) -> None:
+        self.deckInfo = deckInfo
+        self.cards = []
 
     def fetch_cards(self):
-        return invoke("findCards", query=f"deck:{self.deckId}")
+        self.cards = invoke("findCards", query=f"deck:{self.deckInfo['name']}")
+        return self.cards
+
+    def fetch_card_info(self, cardId: str):
+        return invoke("cardsInfo", cards=[cardId])
