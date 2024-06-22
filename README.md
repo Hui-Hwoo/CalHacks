@@ -34,27 +34,32 @@
 
 ```json
 {
-    "answer": "back content",
-    "question": "front content",
-    "deckName": "Default",
-    "modelName": "Basic",
-    "fieldOrder": 1,
+    "cardId": 1719083670854,
     "fields": {
-        "Front": { "value": "front content", "order": 0 },
-        "Back": { "value": "back content", "order": 1 }
+        "Question": { "value": "Question for CalHacks", "order": 0 },
+        "Answer": { "value": "Answer for CalHacks", "order": 1 },
+        "Image": {
+            "value": "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
+            "order": 2
+        }
     },
-    "css": "p {font-family:Arial;}",
-    "cardId": 1498938915662,
-    "interval": 16,
-    "note": 1502298033753,
-    "ord": 1,
+    "fieldOrder": 0,
+    "question": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n</style>test\n\n<img src=https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg />",
+    "answer": "<style>.card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n</style>test\n\n<img src=https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg />\n\n<hr id=answer>\n\negts",
+    "modelName": "CalHacks",
+    "ord": 0,
+    "deckName": "CalHacks",
+    "css": ".card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n",
+    "factor": 0,
+    "interval": 0,
+    "note": 1719083670854,
     "type": 0,
     "queue": 0,
-    "due": 1,
-    "reps": 1,
+    "due": 20718,
+    "reps": 0,
     "lapses": 0,
-    "left": 6,
-    "mod": 1629454092
+    "left": 0,
+    "mod": 1719083670
 }
 ```
 
