@@ -52,7 +52,9 @@ async def main() -> None:
         if msg_type in {"user_message", "assistant_message"}:
             role = message["message"]["role"]
             content = message["message"]["content"]
-            message_box += f"role: {role}\n" f"content: {content}\n" f"type: {msg_type}\n"
+            message_box += (
+                f"role: {role}\n" f"content: {content}\n" f"type: {msg_type}\n"
+            )
 
             # Add top emotions if available
             if "models" in message and "prosody" in message["models"]:
@@ -86,7 +88,6 @@ async def main() -> None:
         message_box += f"{'='*60}\n"
         # Print the constructed message box
         print(message_box)
-
 
     # ================================================ #
     #                     ANKI PART                    #
@@ -123,12 +124,12 @@ async def main() -> None:
                     tool_call_id = None
                     tool_type = None
                 resp = ankicards.fetch_card_info()
-                resp_str = "When you are ready for next round of questions, say 'next' to continue, else keep silent.\n"
+                resp_str = "When you are ready for next round of questions, say 'next' to continue, otherwise keep silent.\n"
                 for card in resp:
                     resp_str += f"Question: {card['fields']['Question']['value']}"
                     resp_str += f"Answer: {card['fields']['Answer']['value']}"
                     resp_str += f"Question ID: {card['cardId']} \n"
-                await socket.send_text_input(resp_str)
+                await socket.send_assistant_input(resp_str)
 
             else:
                 # Asynchronously get user input to prevent blocking other operations

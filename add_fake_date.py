@@ -1,5 +1,5 @@
-from utils import invoke
-from cards import AnkiCards
+from anki.utils import invoke
+from anki.cards import AnkiCards
 
 fake_data = [
     {
@@ -44,6 +44,7 @@ fake_data = [
     },
 ]
 
+
 def add_fake_data():
     current_deck = {"name": "CalHacks", "id": 1719082606356}
     ankicards = AnkiCards(current_deck)
@@ -51,12 +52,17 @@ def add_fake_data():
     for card in fake_data:
         Question = card["Q"]
         Answer = card["A"]
-        invoke("addNote", note={"deckName": current_deck["name"], "modelName": "CalHacks", "fields": {"Question": Question, "Answer": Answer}})
-    
+        invoke(
+            "addNote",
+            note={
+                "deckName": current_deck["name"],
+                "modelName": "CalHacks",
+                "fields": {"Question": Question, "Answer": Answer},
+            },
+        )
+
     print("Fake data added successfully!")
+
 
 if __name__ == "__main__":
     add_fake_data()
-
-
-
