@@ -20,9 +20,13 @@
      - [ ] Set whether user got answer right and how easy it was to recall
  - [x] Try to an LLM (ChatGPT|Hume) to converse with the User in natural language - prompt the flashcard, check whether they got it right, how easy it was to recall.
      - [ ] Optional flow to demo: User can ask clarifying questions around flashcards
-     - [ ] Question: Is Hume's LLM a good enough general LLM, or do we need to use ChatGPT?
- - [ ] Make prompt for LLM to read the format properly/generate data to send back to Anki
-    - [ ] Test first using a text file that roughly corresponds to Anki's deck/card data structure
+     - [x] Question: Is Hume's LLM a good enough general LLM, or do we need to use ChatGPT?
+            Answer: Hume can use gpt-4o as supplementary LLM.
+ - [ x] Make prompt for LLM to read the format properly/generate data to send back to Anki
+ - [x] Test function calling for getting flashcards and setting the answers
+ - [ ] Write proper set function to update the flashcards' ease of recall only
+ - [ ] Test first using a text file that roughly corresponds to Anki's deck/card data structure
+ - [ ] Discard the text file - connect to Anki's HTTP API.
  - [ ] Add Text to Speech either via Hume or LMNT - so that we're conversing instead of typing
  - [ ] Prototype auto-generating flashcards via AI
     - [ ] OCR using Intel's platform? Or maybe just GPT-4o...
