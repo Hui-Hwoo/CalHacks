@@ -1,5 +1,5 @@
 # Fetch and Update Cards Information
-from .utils import invoke
+from utils import invoke
 
 
 class AnkiCards:
@@ -28,3 +28,6 @@ class AnkiCards:
         return invoke(
             "answerCards", answers=[{"cardId": int(cardId), "ease": int(ease)}]
         )
+
+    def addCards(self, cards):
+        return invoke("addNotes", notes=cards)
