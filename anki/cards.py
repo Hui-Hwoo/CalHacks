@@ -24,5 +24,7 @@ class AnkiCards:
 
         return resp
 
-    def answerCards(self, cardId: str, ease: int):
-        return invoke("answerCards", answers=[{"cardId": cardId, "ease": ease}])
+    def answerCards(self, cardId, ease):
+        return invoke(
+            "answerCards", answers=[{"cardId": int(cardId), "ease": int(ease)}]
+        )
