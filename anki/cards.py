@@ -1,5 +1,5 @@
 # Fetch and Update Cards Information
-from utils import invoke
+from .utils import invoke
 
 
 class AnkiCards:

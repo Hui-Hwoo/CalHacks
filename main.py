@@ -123,11 +123,11 @@ async def main() -> None:
                     tool_call_id = None
                     tool_type = None
                 resp = ankicards.fetch_card_info()
-                resp_str = "When you are ready for next round of questions, say 'next' to continue, else keep silent.\n1"
+                resp_str = "When you are ready for next round of questions, say 'next' to continue, else keep silent.\n"
                 for card in resp:
-                    resp_str += f"Question: {card['question']}  "
-                    resp_str += f"Answer: {card['answer']}  "
-                    resp_str += f"Question ID: {card['questionId']} \n"
+                    resp_str += f"Question: {card['fields']['Question']['value']}"
+                    resp_str += f"Answer: {card['fields']['Answer']['value']}"
+                    resp_str += f"Question ID: {card['cardId']} \n"
                 await socket.send_text_input(resp_str)
 
             else:
@@ -167,7 +167,7 @@ async def main() -> None:
             on_message=on_message,  # Handler for when a message is received
             on_error=on_error,  # Handler for when an error occurs
             on_close=on_close,  # Handler for when the connection is closed
-            enable_audio=False,  # Flag to enable audio playback (True by default)
+            enable_audio=True,  # Flag to enable audio playback (True by default)
         ) as socket:
             # Start the microphone interface in the background; add "device=NUMBER" to specify device
             microphone_task = asyncio.create_task(
