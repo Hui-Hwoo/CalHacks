@@ -54,7 +54,7 @@ const handleToolCall: ToolCallHandler = async (
                 type: "tool_response",
                 tool_call_id: toolCall.tool_call_id,
                 content: JSON.stringify(
-                    args.deckName == "Physics" ? flashcards : flashcards_bio
+                    args.deckName == "English" ? flashcards : flashcards_bio
                 ),
             };
         } catch (error) {
