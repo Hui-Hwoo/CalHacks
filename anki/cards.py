@@ -24,10 +24,16 @@ class AnkiCards:
 
         return resp
 
-    def answerCards(self, cardId, ease):
-        return invoke(
-            "answerCards", answers=[{"cardId": int(cardId), "ease": int(ease)}]
-        )
+    async def answerCards(self, params: dict):
+        performances = params.get("performances", [])
+        answers = []
+        for performance in performances:
+            cardId = performance["questionId"]
+            ease = performance["performance"]
+            if cardId and ease:
+                answers.append({"cardId": cardId, "ease": ease})
+
+        return invoke("answerCards", answers=answers)
 
     def addCards(self, cards):
         return invoke("addNotes", notes=cards)

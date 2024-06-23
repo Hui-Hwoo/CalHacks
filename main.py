@@ -65,8 +65,8 @@ async def main() -> None:
                 for emotion, score in top_emotions:
                     message_box += f"{emotion}: {score:.4f}\n"
         elif msg_type == "tool_call":
-            paras = json.loads(message["parameters"])
-            ankicards.answerCards(paras["questionId"], paras["performance"])
+            params = json.loads(message["parameters"])
+            await ankicards.answerCards(params)
             if tool_call_id is None and tool_type is None:
                 answered = True
                 tool_call_id = message["tool_call_id"]

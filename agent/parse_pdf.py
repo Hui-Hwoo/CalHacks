@@ -41,7 +41,8 @@ def fetch_QAs_from_text(text):
                             ```json
                             {"pairs": [{"Qustion":"qustion1", "Answer": "answer1"} ...]}
                             ```
-                            """ + text,
+                            """
+                + text,
             },
         ],
     )
@@ -49,6 +50,7 @@ def fetch_QAs_from_text(text):
     message = completion.choices[0].message
     parsed = json.loads(message.content.strip("```").lstrip("json"))
     print(len(parsed["pairs"]))
+
 
 def main():
     text = extract_text_from_pdf()
