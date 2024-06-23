@@ -13,24 +13,25 @@
 
 3. detech the emotional state -> update the flashcard status
 
-## Steps 
- - [x] Confirm Anki has a read/write API
- - [x] Understand which API endpoints we'll use to...
-     - [ ] Get due cards from deck
-     - [ ] Set whether user got answer right and how easy it was to recall
- - [x] Try to an LLM (ChatGPT|Hume) to converse with the User in natural language - prompt the flashcard, check whether they got it right, how easy it was to recall.
-     - [ ] Optional flow to demo: User can ask clarifying questions around flashcards
-     - [x] Question: Is Hume's LLM a good enough general LLM, or do we need to use ChatGPT?
+## Steps
+
+-   [x] Confirm Anki has a read/write API
+-   [x] Understand which API endpoints we'll use to...
+    -   [ ] Get due cards from deck
+    -   [ ] Set whether user got answer right and how easy it was to recall
+-   [x] Try to an LLM (ChatGPT|Hume) to converse with the User in natural language - prompt the flashcard, check whether they got it right, how easy it was to recall.
+    -   [ ] Optional flow to demo: User can ask clarifying questions around flashcards
+    -   [x] Question: Is Hume's LLM a good enough general LLM, or do we need to use ChatGPT?
             Answer: Hume can use gpt-4o as supplementary LLM.
- - [ x] Make prompt for LLM to read the format properly/generate data to send back to Anki
- - [x] Test function calling for getting flashcards and setting the answers
- - [ ] Write proper set function to update the flashcards' ease of recall only
- - [ ] Test first using a text file that roughly corresponds to Anki's deck/card data structure
- - [ ] Discard the text file - connect to Anki's HTTP API.
- - [x] Add Text to Speech either via Hume or LMNT - so that we're conversing instead of typing
- - [ ] Prototype auto-generating flashcards via AI
-    - [ ] OCR using Intel's platform? Or maybe just GPT-4o...
- - [ ] Add Hume's emotional analysis to gauge how user confidence about the answer
+-   [ x] Make prompt for LLM to read the format properly/generate data to send back to Anki
+-   [x] Test function calling for getting flashcards and setting the answers
+-   [ ] Write proper set function to update the flashcards' ease of recall only
+-   [ ] Test first using a text file that roughly corresponds to Anki's deck/card data structure
+-   [ ] Discard the text file - connect to Anki's HTTP API.
+-   [x] Add Text to Speech either via Hume or LMNT - so that we're conversing instead of typing
+-   [ ] Prototype auto-generating flashcards via AI
+    -   [ ] OCR using Intel's platform? Or maybe just GPT-4o...
+-   [ ] Add Hume's emotional analysis to gauge how user confidence about the answer
 
 ## Example
 
@@ -67,23 +68,10 @@
 }
 ```
 
-## Notes
+# Project Story
 
-### for Windows Users
+## Inspiration
 
-Windows users may see a firewall nag dialog box appear on Anki startup. This occurs because Anki-Connect runs a local HTTP server in order to enable other applications to connect to it. The host application, Anki, must be unblocked for this plugin to function correctly.
+The potential of AI lies not in performing tasks for humans, but in transforming diverse information formats into accessible and interactive forms. By making sense of chaos, AI can help us complete tasks and extract valuable insights. With the advancements in AI's ability to understand speech and detect emotions, we can increasingly rely on AI to assist in daily decision-making, avoiding the pitfalls of our own biases.
 
-### for MacOS Users
-
-Starting with Mac OS X Mavericks, a feature named App Nap has been introduced to the operating system. This feature causes certain applications which are open (but not visible) to be placed in a suspended state. As this behavior causes Anki-Connect to stop working while you have another window in the foreground, App Nap should be disabled for Anki:
-
-Start the Terminal application.
-Execute the following commands in the terminal window:
-
-```
-defaults write net.ankiweb.dtop NSAppSleepDisabled -bool true
-defaults write net.ichi2.anki NSAppSleepDisabled -bool true
-defaults write org.qt-project.Qt.QtWebEngineCore NSAppSleepDisabled -bool true
-```
-
-Restart Anki.
+Our project starts from a simple yet powerful idea: using AI to help us manage tasks, emails, and assignments through conversation. Specifically, we aim to enhance the flashcard application Anki. With conversational learning, detailed and customized explanations, and the ability to recognize uncertainty even in our affirmative responses, AI offers a more objective view of our study progress, preventing overconfidence. Imagine giving AI all the files or links you need to review and starting the entire process with a simple "Hello!"—that's what we're building. By creating a conversational interface with otherwise silent files and information sources, we're making language powerful again, enabling us to complete any work by talking. If you lack a clear plan, you can even ask AI to help design one.
