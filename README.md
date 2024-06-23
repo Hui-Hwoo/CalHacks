@@ -27,7 +27,7 @@
  - [ ] Write proper set function to update the flashcards' ease of recall only
  - [ ] Test first using a text file that roughly corresponds to Anki's deck/card data structure
  - [ ] Discard the text file - connect to Anki's HTTP API.
- - [ ] Add Text to Speech either via Hume or LMNT - so that we're conversing instead of typing
+ - [x] Add Text to Speech either via Hume or LMNT - so that we're conversing instead of typing
  - [ ] Prototype auto-generating flashcards via AI
     - [ ] OCR using Intel's platform? Or maybe just GPT-4o...
  - [ ] Add Hume's emotional analysis to gauge how user confidence about the answer
